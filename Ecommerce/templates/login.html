@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="container-fluid mt-5" style="margin-bottom:60px;">
+  <h2>LOGIN PAGE</h2>
+
+<form method="POST">
+  {% csrf_token %}
+<div class="mb-3">
+  <labelclass="form-label">Username</label>
+  <input type="text" name="u" class="form-control" placeholder="enter Username">
+</div>
+<div class="mb-3">
+  <label class="form-label">Password</label>
+  <input type="password" name="p" class="form-control" placeholder="enter password">
+</div>
+
+<div class="mb=2">
+  <input type="submit" class="form-control" >
+</div>
+
+</form>
+{% if messages %}
+{% for i in messages %}
+<ul>
+  <li>{{i}}</li>
+</ul>
+  {% endfor %}
+  {% endif %}
+</div>
+{% endblock %}
+

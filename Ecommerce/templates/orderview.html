@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid mt-3">
+<div class="row">
+<div class="col-sm-8">
+<table class="table table-bordered">
+    {% for i in o %}
+    <th colspan="2"><center><b>Name of the Customer:{{i.user}}</b></center></th>
+
+    <tr>
+    <td><img src="{{i.product.image.url}}" height="250px" width="250px"></td>
+    <td><b>Order address:{{i.address}}</b><br>
+    <b>Customer phone:{{i.phone}}</b><br>
+    <b>Product name:{{i.product.name}}</b><br>
+    <b>Product price:{{i.product.price}}</b><br>
+    <b>Ordered on:{{i.date_ordered}}</b><br>
+    <b>Delivery status:<span class="text-danger">{{i.delivery_status}}</span></b><br>
+
+</td>
+    
+
+
+
+</tr>
+</div>
+</div></div>
+
+{% endfor %}
+</table>
+
+{% endblock %}
